@@ -12,14 +12,9 @@ import { ImpactsModule } from './impacts/impacts.module';
 @Module({
   imports: [
 		GraphQLModule.forRoot({
-			autoSchemaFile: join(process.cwd(), 'src/schema.gql')
+			autoSchemaFile: join(process.cwd(), 'schema.gql')
     }),
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: join(process.cwd(), 'src/rivm.sqlite'),
-      entities: ['dist/**/*.entity{.ts,.js}'],
-      synchronize: true
-    }),
+    TypeOrmModule.forRoot(),
 		IndicatorModule,
 		EntriesModule,
 		ImpactsModule,

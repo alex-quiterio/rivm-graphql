@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  rivmdb:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - '3306:3306'
+    environment:
+      MYSQL_DATABASE: 'rivm_development'
+      MYSQL_USER: 'metabolic'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./dbseeds:/dbseeds
+volumes:
+  db-data:

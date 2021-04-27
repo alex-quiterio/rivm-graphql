@@ -9,11 +9,11 @@ export class Indicator {
   @Field(type => Int)
   id: number;
 
-  @Column('varchar', { length: 45})
+  @Column('varchar', { length: 255})
   @Field()
   method: string;
 
-  @Column('varchar', { length: 45})
+  @Column('varchar', { length: 255})
   @Field()
   category: string;
   

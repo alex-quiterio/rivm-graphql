@@ -8,20 +8,20 @@ import { Indicator } from "../indicator/indicator.entity";
 export class Impact {
   @PrimaryGeneratedColumn()
   @Field(type => Int)
-  id: number;
+  id: Number;
 
-  @Column()
+  @Column({ type: "float"})
   @Field(type => Float)
-  coefficient: number;
+  coefficient: Number;
 
   @Column()
   entryId: number;
 
-  @ManyToOne(() => Entry, entry => entry.impacts)
+  @ManyToOne(() => Entry, entry => entry.impacts, { eager: true })
   @Field(type => Entry)
   entry: Entry;
 
-  @ManyToOne(() => Indicator, indicator => indicator.impacts)
+  @ManyToOne(() => Indicator, indicator => indicator.impacts, { eager: true })
   @Field(type => Indicator)
   indicator: Indicator;
 
