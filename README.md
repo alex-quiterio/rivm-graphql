@@ -48,3 +48,5 @@ Visit http://localhost:3000/graphql and try the following queries:
   }
 }
 ```
+## TODOs
+[ ] Improve N+1 queries on the resolvers
