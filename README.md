@@ -22,10 +22,10 @@ $ yarn run start:dev
 
 Visit http://localhost:3000/graphql and try the following queries:
 
-graphql```
+```
 # the list of indicators
 {
-	indicators {
+ indicators {
     indicatorName
     method
     category
@@ -33,7 +33,7 @@ graphql```
 }
 # a list of entries for indicator 13 (indicatorName: GWP100)
 {
-	entries {
+ entries {
     productName
     unit
     geographyCode
