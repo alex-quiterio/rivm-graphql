@@ -8,8 +8,9 @@ import { ImpactsService } from '../impacts/impacts.service';
 @Injectable()
 export class EntriesService {
   constructor(
-    @InjectRepository(Entry) private readonly entriesRepository: Repository<Entry>,
-    private impactsService: ImpactsService
+    @InjectRepository(Entry)
+    private readonly entriesRepository: Repository<Entry>,
+    private impactsService: ImpactsService,
   ) {}
 
   async findAll(): Promise<Entry[]> {
@@ -20,7 +21,10 @@ export class EntriesService {
     return this.entriesRepository.findOne(id);
   }
 
-  async findImpactByIndicatorIdAndEntryId(indicatorId: number, entryId: number): Promise<Impact> {
+  async findImpactByIndicatorIdAndEntryId(
+    indicatorId: number,
+    entryId: number,
+  ): Promise<Impact> {
     return this.impactsService.findByIndicatorAndEntry(entryId, indicatorId);
   }
 }

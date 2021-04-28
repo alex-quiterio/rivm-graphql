@@ -7,6 +7,6 @@ import { ImpactsModule } from '../impacts/impacts.module';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Entry]), ImpactsModule],
-  providers: [EntriesService, EntriesResolver]
+  providers: [EntriesService, EntriesResolver],
 })
 export class EntriesModule {}

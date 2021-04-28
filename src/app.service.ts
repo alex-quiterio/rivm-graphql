@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Metabolic Rocks!';
+  getMetabolicHello(): string {
+    return 'Metabolic Rocks! Please visit http://localhost/graphql';
   }
 }

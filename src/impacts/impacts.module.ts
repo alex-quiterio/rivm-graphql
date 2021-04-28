@@ -7,6 +7,6 @@ import { ImpactsService } from './impacts.service';
 @Module({
   imports: [TypeOrmModule.forFeature([Impact])],
   providers: [ImpactsService, ImpactsResolver],
-  exports: [ImpactsService]
+  exports: [ImpactsService],
 })
 export class ImpactsModule {}

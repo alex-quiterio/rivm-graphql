@@ -6,6 +6,6 @@ import { Indicator } from './indicator.entity';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Indicator])],
-  providers: [IndicatorService, IndicatorResolver]
+  providers: [IndicatorService, IndicatorResolver],
 })
 export class IndicatorModule {}

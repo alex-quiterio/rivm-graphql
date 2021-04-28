@@ -5,7 +5,10 @@ import { Indicator } from './indicator.entity';
 
 @Injectable()
 export class IndicatorService {
-  constructor (@InjectRepository(Indicator) private readonly indicatorsRepository: Repository<Indicator>) {}
+  constructor(
+    @InjectRepository(Indicator)
+    private readonly indicatorsRepository: Repository<Indicator>,
+  ) {}
 
   async findAll(): Promise<Indicator[]> {
     return this.indicatorsRepository.find();

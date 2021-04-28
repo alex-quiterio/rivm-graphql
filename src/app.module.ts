@@ -1,23 +1,23 @@
-import { Module } from '@nestjs/common'
-import { TypeOrmModule } from '@nestjs/typeorm'
-import { GraphQLModule } from '@nestjs/graphql'
-import { join } from 'path'
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { GraphQLModule } from '@nestjs/graphql';
+import { join } from 'path';
 
-import { AppController } from './app.controller'
-import { AppService } from './app.service'
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 import { IndicatorModule } from './indicator/indicator.module';
 import { EntriesModule } from './entries/entries.module';
 import { ImpactsModule } from './impacts/impacts.module';
 
 @Module({
   imports: [
-		GraphQLModule.forRoot({
-			autoSchemaFile: join(process.cwd(), 'schema.gql')
-    }),
     TypeOrmModule.forRoot(),
-		IndicatorModule,
-		EntriesModule,
-		ImpactsModule,
+    GraphQLModule.forRoot({
+      autoSchemaFile: join(process.cwd(), 'schema.gql'),
+    }),
+    IndicatorModule,
+    EntriesModule,
+    ImpactsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
